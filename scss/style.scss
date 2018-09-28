@@ -1,0 +1,146 @@
+body {
+  width: 100%;
+  height: 100%;
+  background: black;
+  margin: 0;
+  overflow: hidden; /* Evite la scrollbar */
+
+  /* Center items */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+audio {
+  width: 300px;
+  height: 54px;
+}
+
+
+.light img {
+  width: 100vw;
+}
+
+.light{
+  position: absolute;
+  top : 0;
+  align-items: center;
+  justify-content: center;
+  animation-duration: 8s;
+  animation-name: light;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes light {
+  0% {
+      opacity: 1;
+  }
+
+  50% {
+      opacity: 1; /* disparition progressive à la fin */
+  }
+
+  100% {
+      top: 0;
+      opacity: 0;
+      transform: scale(0);
+  }
+}
+
+.long {
+  /* cosmétique */
+  font-size: 32px;
+  color: #4bd5ee;
+  /* Animation: Apparition et disparition progressive */
+  opacity: 0;
+  animation-delay: 8s;
+  animation-duration: 2s;
+  animation-name: long;
+  animation-timing-function: ease-out;
+}
+
+@keyframes long {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+.becode img {
+  width: 25vw;
+}
+
+.becode {   
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    margin: auto;
+    animation: becode 9s ease-out 9s;
+    opacity: 0;
+}
+
+@keyframes becode{
+  0% {
+      width: 18em;        
+      transform: scale(2.75);
+      opacity: 1;
+  }
+  50% {
+      opacity: 1;
+      width: 18em;      
+  }
+  100% {
+      opacity: 0;
+      transform: scale(0.1);
+      width: 18em;        
+  }
+}
+
+
+.crawl {
+  /* centrage de l'élément' */
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 800px;
+  margin: 0 0 0 -400px;
+  top: auto;
+  bottom: 0;
+  height: 50em;
+  /* cosmétique */
+  color: #ffff66;    
+  font-size: 64px;
+  text-align: justify;
+  /* Applique la transformation  */
+  transform-origin: center bottom;
+  transform: perspective(300px) rotateX(25deg);
+}
+
+.crawl > div {
+  /* positionne la div en bas de l'écran (non visible) */
+  /* l'animation la fait remonter progressivement */
+  position: absolute;
+  top: 100%; 
+  animation-delay: 11s; /* Démarre l'animation après la première */
+  animation-duration: 20s;
+  animation-name: crawl;
+  animation-timing-function: linear;
+}
+
+@keyframes crawl {
+  0% {
+      top: 100%;
+      opacity: 1;
+  }
+
+  80% {
+      opacity: 1; /* disparition progressive à la fin */
+  }
+
+  100% {
+      top: 0;
+      opacity: 0;
+  }
+}
